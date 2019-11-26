@@ -1,0 +1,24 @@
+.main-chat
+  .main-chat__mainheader
+    .main-chat__mainheader__groupinfomation
+      .main-chat__mainheader__groupinfomation__groupname
+        group name
+      .main-chat__mainheader__groupinfomation__groupmember
+        Member:seo
+    =link_to "#", class: "main-chat__mainheader__edit" do
+      Edit
+
+  .main-chat__maincontents
+    .main-chat__maincontents__messeageinfomation
+      .main-chat__maincontents__messeageinfomation__username
+        seo
+      .main-chat__maincontents__messeageinfomation__date
+        2019/10/08/19:14:39
+    .main-chat__maincontents__messages
+      this is a first message.
+    .main-chat__maincontents__frombox
+      %input{type: "text",placeholder: "type a message",class: "main-chat__maincontents__frombox__text"}
+        %label{class: "main-chat__maincontents__frombox__text__image"}
+          = icon('fas', 'image')
+          %input{type: "file",class: "main-chat__maincontents__frombox__text__image__file"}
+      %input{type: "submit",value: "send",class: "main-chat__maincontents__frombox__submit"}
