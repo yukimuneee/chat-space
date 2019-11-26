@@ -1,0 +1,44 @@
+.side-bar {
+  float: left;
+  overflow: scroll;
+  width: 300px;
+  height: 100vh;
+  &__sideheader {
+    height: 86px;
+    background-color:#253141;
+    display: flex;
+    justify-content: space-between;
+    &__username {
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 86px;
+      color:#FFFFFF;
+      padding-left: 20px;
+   }
+    &__button{
+      line-height: 86px;
+      padding-right: 20px;
+   }
+    &__btn{
+      color: #FFFFFF;
+      text-decoration: none;
+      font-size: 0.9em;
+   }
+  }
+  &__sidecontents {
+    height: calc(100vh - 86px);
+    background-color:#2f3251;
+    &__groupname{
+      color:#FFFFFF;
+      font-size: 15px;
+      font-weight: bold;
+      padding: 20px 0px 5px 20px;
+    }
+    &__firstmessage{
+      color:#FFFFFF;
+      font-size: 11px;
+      font-weight: bold;
+      padding: 0px  0px 20px 20px;
+    }
+  }
+}
