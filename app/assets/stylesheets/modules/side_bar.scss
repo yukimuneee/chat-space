@@ -4,19 +4,19 @@
   width: 300px;
   height: 100vh;
   &__sideheader {
-    height: 86px;
+    height: 90px;
     background-color:#253141;
     display: flex;
     justify-content: space-between;
     &__username {
       font-size: 16px;
       font-weight: bold;
-      line-height: 86px;
+      line-height: 90px;
       color:#FFFFFF;
       padding-left: 20px;
    }
     &__button{
-      line-height: 86px;
+      line-height: 90px;
       padding-right: 20px;
    }
     &__btn{
@@ -26,16 +26,15 @@
    }
   }
   &__sidecontents {
-    height: calc(100vh - 86px);
+    height: calc(100vh - 90px);
     background-color:#2f3251;
-    
     &__group{
-      
+      text-decoration: none;
       &__groupname{
         color:#FFFFFF;
         font-size: 15px;
         font-weight: bold;
-        padding: 20px 0px 5px 20px;
+        padding: 20px 0px 5px 20px;  
       }
       &__firstmessage{
         color:#FFFFFF;

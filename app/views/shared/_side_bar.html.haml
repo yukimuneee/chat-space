@@ -10,9 +10,8 @@
 
   .side-bar__sidecontents
     - current_user.groups.each do |group|
-      .side-bar__sidecontents__group
-        = link_to group_messages_path(group) do
-          .side-bar__sidecontents__group__groupname
-            = group.name
-          .side-bar__sidecontents__group__firstmessage
-            メッセージはまだありません。
+      = link_to group_messages_path(group), class: "side-bar__sidecontents__group" do
+        .side-bar__sidecontents__group__groupname
+          = group.name
+        .side-bar__sidecontents__group__firstmessage
+          = group.show_last_message
