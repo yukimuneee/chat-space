@@ -28,17 +28,21 @@
   &__sidecontents {
     height: calc(100vh - 86px);
     background-color:#2f3251;
-    &__groupname{
-      color:#FFFFFF;
-      font-size: 15px;
-      font-weight: bold;
-      padding: 20px 0px 5px 20px;
-    }
-    &__firstmessage{
-      color:#FFFFFF;
-      font-size: 11px;
-      font-weight: bold;
-      padding: 0px  0px 20px 20px;
+    
+    &__group{
+      
+      &__groupname{
+        color:#FFFFFF;
+        font-size: 15px;
+        font-weight: bold;
+        padding: 20px 0px 5px 20px;
+      }
+      &__firstmessage{
+        color:#FFFFFF;
+        font-size: 11px;
+        font-weight: bold;
+        padding: 0px  0px 20px 20px;
+      }
     }
   }
 }
