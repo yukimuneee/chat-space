@@ -1,7 +1,9 @@
 $(function(){
   function buildHTML(message){
+    var imageA = '';
     if (message.image) {
-    var imageA = `<img src="${message.image}" class="lower-message__image">`
+      imageA = `<img src="${message.image}" class="lower-message__image">`;
+    }
     var html = `<div class="main-chat__maincontents__messages">
                   <div class="main-chat__maincontents__messeageinfomation">
                     <div class="main-chat__maincontents__messeageinfomation__username">${message.name}</div>
@@ -13,21 +15,8 @@ $(function(){
                     </p>
                       ${imageA}
                   </div>
-                </div>`
-    } else {
-    var html = `<div class="main-chat__maincontents__messages">
-                  <div class="main-chat__maincontents__messeageinfomation">
-                    <div class="main-chat__maincontents__messeageinfomation__username">${message.name}</div>
-                    <div class="main-chat__maincontents__messeageinfomation__date">${message.date}</div>
-                  </div>
-                  <div class="main-chat__maincontents__text">
-                    <p class="lower-message__content">
-                      ${message.content}
-                    </p>
-                  </div>
-                </div>`
-    }
-    return html
+                </div>`;
+    return html;
   }
   $('#new_message').on('submit', function(e){
     e.preventDefault();
