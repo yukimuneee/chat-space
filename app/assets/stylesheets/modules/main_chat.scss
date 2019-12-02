@@ -31,14 +31,15 @@
     }
   }
   &__maincontents{
-    height: calc(100vh - 90px);
+    height: calc(100vh - 182px);
     background-color: #fafafa;
     overflow: scroll;
-    width: calc(100vw - 300px);
+    padding: 46px 40px;
+    box-sizing: content-box;
     &__messeageinfomation{
       display: flex;
       justify-content: flex-start;
-      padding: 46px 0px 10px 40px;
+      padding-bottom: 10px;
       &__username{
         font-size: 16px;
         font-weight: bold;
@@ -50,10 +51,10 @@
         padding-left: 10px;
       }
     }
-    &__lower-message{
+    &__text{
       font-size: 14px;
       color: #434a43;
-      padding-left: 40px;
+      padding-bottom: 40px;
     }
   }
   &__form{
