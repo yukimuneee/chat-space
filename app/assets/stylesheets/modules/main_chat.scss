@@ -34,8 +34,8 @@
     height: calc(100vh - 182px);
     background-color: #fafafa;
     overflow: scroll;
-    width: calc(100vw - 380px);
     padding: 46px 40px;
+    box-sizing: content-box;
     &__messeageinfomation{
       display: flex;
       justify-content: flex-start;
