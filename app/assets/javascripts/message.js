@@ -68,7 +68,7 @@ $(function(){
       $('.main-chat__maincontents').animate({scrollTop: $('.main-chat__maincontents')[0].scrollHeight}, 'fast');
     })
     .fail(function() {
-      console.log('error');
+      alert("メッセージ送信に失敗しました");
     });
   };
   
