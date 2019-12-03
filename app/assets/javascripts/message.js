@@ -41,38 +41,33 @@ $(function(){
     .fail(function(){
       $('.main-chat__form__submit').prop('disabled', false);
       alert("メッセージ送信に失敗しました");
-    })
-  })
+    });
+  });
  
   var reloadMessages = function() {
-    //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
-    last_message_id = $('.main-chat__maincontents__messages:last').data("message-id");
-    $.ajax({
-      //ルーティングで設定した通りのURLを指定
-      url: "api/messages",
-      //ルーティングで設定した通りhttpメソッドをgetに指定
-      type: 'get',
-      dataType: 'json',
-      //dataオプションでリクエストに値を含める
-      data: {id: last_message_id}
-    })
-    .done(function(messages) {
-      //追加するHTMLの入れ物を作る
-      var insertHTML = '';
-      //配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
-      $.each(messages, function(i, message) {
-        insertHTML += buildHTML(message)
+    if (window.location.href.match(/\/groups\/\d+\/messages/)){
+        var last_message_id = $('.main-chat__maincontents__messages:last').data("message-id")
+      $.ajax({
+        url: "api/messages",
+        type: 'get',
+        dataType: 'json',
+        data: {id: last_message_id}
+      })
+      .done(function(messages) {
+        var insertHTML = '';
+        $.each(messages, function(i, message) {
+          insertHTML += buildHTML(message)
+        });
+        $('.main-chat__maincontents').append(insertHTML);
+        $('.main-chat__maincontents').animate({scrollTop: $('.main-chat__maincontents')[0].scrollHeight}, 'fast');
+      })
+      .fail(function() {
+        alert("メッセージ送信に失敗しました");
       });
-      //メッセージが入ったHTMLに、入れ物ごと追加
-      $('.messages').append(insertHTML);
-      $('.main-chat__maincontents').animate({scrollTop: $('.main-chat__maincontents')[0].scrollHeight}, 'fast');
-    })
-    .fail(function() {
-      alert("メッセージ送信に失敗しました");
-    });
-  };
-  
+    }
+  }
   setInterval(reloadMessages, 7000); 
-})
+
+});
 
 
