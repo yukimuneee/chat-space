@@ -4,7 +4,7 @@ $(function(){
     if (message.image) {
       imageA = `<img src="${message.image}" class="lower-message__image">`;
     }
-    var html = `<div class="main-chat__maincontents__messages">
+    var html = `<div class="main-chat__maincontents__messages" data-message-id="${message.id}">
                   <div class="main-chat__maincontents__messeageinfomation">
                     <div class="main-chat__maincontents__messeageinfomation__username">${message.name}</div>
                     <div class="main-chat__maincontents__messeageinfomation__date">${message.date}</div>
@@ -41,10 +41,33 @@ $(function(){
     .fail(function(){
       $('.main-chat__form__submit').prop('disabled', false);
       alert("メッセージ送信に失敗しました");
-    })
-  })
-})
+    });
+  });
+ 
+  var reloadMessages = function() {
+    if (window.location.href.match(/\/groups\/\d+\/messages/)){
+        var last_message_id = $('.main-chat__maincontents__messages:last').data("message-id")
+      $.ajax({
+        url: "api/messages",
+        type: 'get',
+        dataType: 'json',
+        data: {id: last_message_id}
+      })
+      .done(function(messages) {
+        var insertHTML = '';
+        $.each(messages, function(i, message) {
+          insertHTML += buildHTML(message)
+        });
+        $('.main-chat__maincontents').append(insertHTML);
+        $('.main-chat__maincontents').animate({scrollTop: $('.main-chat__maincontents')[0].scrollHeight}, 'fast');
+      })
+      .fail(function() {
+        alert("メッセージ送信に失敗しました");
+      });
+    }
+  }
+  setInterval(reloadMessages, 7000); 
 
-
+});
 
 
