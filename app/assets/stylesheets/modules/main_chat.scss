@@ -32,17 +32,13 @@
   }
   &__maincontents{
     background-color: #fafafa;
+    height: calc(100vh - 180px);
+    width: calc(100vw - 300px);
     overflow: scroll;
-    padding: 26px 20px ;
-    box-sizing: content-box;
-    position: absolute;
-    top: 90px;
-    right: 0px;
-    bottom: 90px;
-    left: 0px;
+    padding: 46px 40px ;
+    box-sizing: border-box;
     &__messages{
-      height: 90px;
-      padding: 20px 0px 10px;
+      padding: 0px 0px 10px;
       &__messeageinfomation{
         display: flex;
         justify-content: flex-start;
