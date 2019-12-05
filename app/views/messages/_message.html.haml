@@ -1,11 +1,11 @@
 .main-chat__maincontents__messages{"data-message-id": "#{message.id}"}
-  .main-chat__maincontents__messeageinfomation
-    .main-chat__maincontents__messeageinfomation__username
+  .main-chat__maincontents__messages__messeageinfomation
+    .main-chat__maincontents__messages__messeageinfomation__username
       = message.user.name
-    .main-chat__maincontents__messeageinfomation__date
+    .main-chat__maincontents__messages__messeageinfomation__date
       = message.created_at.strftime("%Y/%m/%d %H:%M")         
-  .main-chat__maincontents__text
+  .main-chat__maincontents__messages__text
     - if message.content.present?
-      %p.main-chat__maincontents__text
+      %p.main-chat__maincontents__messages__text
         = message.content
     = image_tag message.image.url, class: 'lower-message__image' if message.image.present?

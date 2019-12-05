@@ -5,12 +5,12 @@ $(function(){
       imageA = `<img src="${message.image}" class="lower-message__image">`;
     }
     var html = `<div class="main-chat__maincontents__messages" data-message-id="${message.id}">
-                  <div class="main-chat__maincontents__messeageinfomation">
-                    <div class="main-chat__maincontents__messeageinfomation__username">${message.name}</div>
-                    <div class="main-chat__maincontents__messeageinfomation__date">${message.date}</div>
+                  <div class="main-chat__maincontents__messages__messeageinfomation">
+                    <div class="main-chat__maincontents__messages__messeageinfomation__username">${message.name}</div>
+                    <div class="main-chat__maincontents__messages__messeageinfomation__date">${message.date}</div>
                   </div>
-                  <div class="main-chat__maincontents__text">
-                    <p class="lower-message__content">
+                  <div>
+                    <p class="main-chat__maincontents__messages__text">
                       ${message.content}
                     </p>
                       ${imageA}
