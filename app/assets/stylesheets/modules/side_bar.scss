@@ -4,19 +4,19 @@
   width: 300px;
   height: 100vh;
   &__sideheader {
-    height: 90px;
+    height: 95px;
     background-color:#253141;
     display: flex;
     justify-content: space-between;
     &__username {
       font-size: 16px;
       font-weight: bold;
-      line-height: 90px;
+      line-height: 95px;
       color:#FFFFFF;
       padding-left: 20px;
    }
     &__button{
-      line-height: 90px;
+      line-height: 95px;
       padding-right: 20px;
    }
     &__btn{
@@ -26,7 +26,7 @@
    }
   }
   &__sidecontents {
-    height: calc(100vh - 90px);
+    height: calc(100vh - 95px);
     background-color:#2f3e51;
     &__group{
       text-decoration: none;
