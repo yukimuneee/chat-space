@@ -57,9 +57,9 @@ $(function(){
         var insertHTML = '';
         $.each(messages, function(i, message) {
           insertHTML += buildHTML(message)
+          $('.main-chat__maincontents').append(insertHTML);
+          $('.main-chat__maincontents').animate({scrollTop: $('.main-chat__maincontents')[0].scrollHeight}, 'fast');
         });
-        $('.main-chat__maincontents').append(insertHTML);
-        $('.main-chat__maincontents').animate({scrollTop: $('.main-chat__maincontents')[0].scrollHeight}, 'fast');
       })
       .fail(function() {
         alert("メッセージ送信に失敗しました");
